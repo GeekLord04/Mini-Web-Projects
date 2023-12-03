@@ -1,0 +1,10 @@
+/* CSS styles for links */
+a {
+    color: blue; /* Change link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
