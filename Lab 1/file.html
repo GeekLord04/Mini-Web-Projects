@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello Candidate</title>
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pass').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const hasAlphabets = /[a-zA-Z]/.test(password);
+            const hasNumbers = /\d/.test(password);
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            else if (!hasAlphabets || !hasNumbers) {
+                alert('Password must contain both letters and numbers.');
+                return false;
+            }
+            alert('Submitted!');
+            return true;
+        }
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+    <h1>Fill this registration form</h1>
+    <form name="testform" accept="" method="post">
+        Name:
+        <input type="text" placeholder="Enter your Name" id="name">
+        <br><br>
+        Email Id:
+        <input type="text" placeholder="Enter your Email id" id="email">
+        <br><br>
+        Password:
+        <input type="password" placeholder="Enter your Password" id="pass">
+        <br><br>
+        Following Roles are open:
+        <ul>
+            <li>UI Designer</li>
+            <li>Software Development Engineer (SDE)</li>
+            <li>Area Manager</li>
+        </ul>
+        <br>
+        Role you are applying for (You can apply for multiple roles): <br>
+        <input type="checkbox" id="role1" name="UI Designer" value="UI">
+        <label for="UI Designer">UI Designer</label><br>
+        <input type="checkbox" id="role2" name="SDE" value="SDE">
+        <label for="SDE">Software Development Engineer (SDE)</label><br>
+        <input type="checkbox" id="role3" name="AM" value="AM">
+        <label for="AM">Area Manager</label><br><br>
+        Gender: &nbsp &nbsp
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label> &nbsp
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>&nbsp
+        <input type="radio" id="pnts" name="gender" value="pnts">
+        <label for="pnts">Prefer not to say</label>
+        <br><br>
+
+        Caste:
+        <select name="caste" id="caste">
+            <option value="UR">UR</option>
+            <option value="SCST">SC/ST</option>
+            <option value="OBC">OBC</option>
+        </select>
+        <br><br>
+        Say something about yourself -<br>
+        <textarea id="description" name="desc" rows="4" cols="50" placeholder="Type here"></textarea><br><br>
+
+        <button onclick="return validateForm()" id="testBtn">Submit</button>
+    </form>
+</body>
+
+</html>
